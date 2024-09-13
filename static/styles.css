@@ -1,0 +1,28 @@
+/* Define styles for your map container */
+
+#body {
+  position: relative;
+}
+
+#map {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh; /* Full screen height */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(-45deg, #e3eefe 0%, #efddfb 100%);
+}
