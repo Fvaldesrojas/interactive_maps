@@ -176,7 +176,7 @@ async def obtener_datos(categoria: str):
     if datos_actual is None or datos_futuro is None or datos_temporal is None:
         raise HTTPException(status_code=404, detail=f"La categoría '{categoria}' no se encuentra en la base de datos.")
 
-    # Convertir los datos de bytes a diccionarios
+    # Convertir los datos diccionarios
     datos_a = json.loads(datos_actual)
     datos_f = json.loads(datos_futuro)
     datos_t = json.loads(datos_temporal)
@@ -261,13 +261,13 @@ async def process_json(data: dict):
         # Convertir todos los valores a cadenas
         combined_data = {key: str(value) for key, value in combined_data.items()}
 
-        # Limpiar los datos temporales y restablecer las banderas
+        # Limpiar los datos temporales 
         temporary_data["esp1"] = None
         temporary_data["esp2"] = None
         esp1_received = False
         esp2_received = False
 
-        # Ejecutar el envío del mapa automáticamente
+        # Ejecutar el envío del mapa 
         await envio_mapa_func()
 
     return {"status": "waiting for all data"}
