@@ -1,5 +1,5 @@
 // Variable para almacenar el ángulo de rotación en grados
-var rotate_degrees = -27.3 + 90; // Por ejemplo, puedes establecer aquí el ángulo de rotación deseado
+var rotate_degrees = -27.3 + 90; 
 var data = {}; // Variable global para almacenar los datos GeoJSON
 
 //IMPORTANTE INGRESAR LA API KEY DE MAPBOX PARA PODER INICIAR LA APLICACION 
@@ -26,7 +26,7 @@ map.on('load', function() {
     // Agregar una capa para visualizar los datos
     map.addLayer({
         id: 'hexagonosLayer',
-        type: 'fill', // Cambia esto a 'line' o 'circle' si es más apropiado para tus datos
+        type: 'fill', 
         source: 'hexagonosSource',
         layout: {},
         paint: {
@@ -52,11 +52,9 @@ map.on('load', function() {
             ],
             'fill-opacity': 0.8,
         }
-    });  // <<-- Este es el lugar correcto para cerrar la llamada map.addLayer
+    });  
 
-    // No necesitas el paréntesis extra aquí:
-    // );
-1
+ 
     let socket = new WebSocket("ws://localhost:8000/ws"); // Usar IP del PC que abre el puerto
 
     socket.onopen = function(e) {
